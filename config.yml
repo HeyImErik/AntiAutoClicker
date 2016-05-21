@@ -1,0 +1,48 @@
+sql: # SQL login information.
+  connect: false
+  
+  driver: jdbc:mysql://
+  uri: localhost:3306
+  database: aac
+  username: root
+  password: password
+  
+logger:
+  # Time zone that the logger uses when it logs dates.
+  time-zone: CEST
+  
+  day-format: dd-mm-yyyy
+  hour-format: HH:mm:ss
+  
+updater:
+  # Will download the latest file if it's available.
+  update: true
+
+messages:
+  # Sends a message to the staff if someone reaches x CPS.
+  send-to-staff: true
+  permission: aac.staff
+  
+  message: '&4A&cAC &8> &c{player} &7reached {amount} CPS.'
+
+bans:
+  # Whether or not to execute bans.
+  execute: true
+  # The ban message.
+  message:
+  - '&cYou are currently banned for Auto Clicking.'
+  - '&cTime remaining on your ban: &4{time}'
+  
+  duration: 7
+  # The time unit times the duration. 
+  # "DAYS", "HOURS", "MINUTES", "SECONDS"
+  unit: DAYS
+
+# This is the amount of violations a player has to make (1 vl every 1 second of having too high CPS), before it will execute bans.
+# Must be more than 1. 
+max-vl: 4
+# Minimum CPS required to warn.
+min-cps: 18
+
+# Minimum TPS required to execute bans.
+min-tps:
