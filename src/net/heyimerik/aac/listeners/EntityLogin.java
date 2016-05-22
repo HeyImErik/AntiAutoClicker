@@ -14,6 +14,7 @@ public class EntityLogin implements Listener {
 
 	@EventHandler
 	public void a(PlayerLoginEvent event) {
+		if (!this.aac.getConfig().getBoolean("sql.connect")) return;
 		if (this.aac._database.exists("SELECT `timeout` FROM `bans` WHERE `uuid`='" + event.getPlayer().getUniqueId().toString() + "';").exists(true)) {
 			SQLResponse data = this.aac._database.executeQuery("SELECT `timeout` FROM `bans` WHERE `uuid`='" + event.getPlayer().getUniqueId().toString() + "';");
 

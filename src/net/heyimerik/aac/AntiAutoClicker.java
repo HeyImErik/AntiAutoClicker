@@ -41,11 +41,11 @@ public class AntiAutoClicker extends JavaPlugin {
 
 		new Logger();
 
-		this._updater = new Updater(this.getAAC(), "1.0");
+		this._updater = new Updater(this.getAAC(), "1.1");
 		try {
 			this._updater.checkLatest(this.getConfig().getBoolean("updater.update"));
 		} catch (Exception e) {
-			System.out.println("[AntiAutoClicker] Failed to update: " + e.getMessage());
+			System.err.println("[AntiAutoClicker] Failed to update: " + e.getMessage());
 		}
 
 		System.out.println("[AntiAutoClicker] AntiAutoClicker v" + super.getDescription().getVersion() + " enabled.");
