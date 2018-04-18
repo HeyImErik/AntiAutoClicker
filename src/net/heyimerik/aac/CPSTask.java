@@ -45,7 +45,7 @@ public class CPSTask implements Runnable {
 
 	public void run() {
 		for (String playerName : this.previousClicks.keySet()) {
-			if (this.previousClicks.get(playerName) >= this.vl.get(playerName)) {
+			if (this.vl.containsKey(playerName) && (this.previousClicks.get(playerName) >= this.vl.get(playerName))) {
 				this.vl.remove(playerName);
 				this.previousClicks.remove(playerName);
 			} else {
